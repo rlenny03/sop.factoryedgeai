@@ -6,10 +6,6 @@ const STRIPE_PRICE_MAP = {
   starter:   "price_1Rz2K5HnXhjv4E1SGHU5s6p0"
 };
 
-function supaClient() {
-  return window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
-}
-
 /* ===== Auth ===== */
 function supaClient() {
   return window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
