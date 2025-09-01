@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>SOP Generator — FactoryEdge AI</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script defer src="/config.js"></script>
+  <script defer src="/app.js"></script>
+  <script src="/turnstile-helper.js"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" async defer></script>
+</head>
+<body>
+  <header>
+    <h1>FactoryEdgeAi SOP Generator</h1>
+  </header>
+
+  <main>
+    <!-- Auth Section -->
+    <section id="auth_view" class="card">
+  <h2>Sign in / Sign up</h2>
+  <div class="auth-grid">
+    <div>
+      <input id="si_email" type="email" placeholder="Email" />
+      <input id="si_pass" type="password" placeholder="Password" />
+      <button id="signin_btn">Sign in</button>
+      <div id="si_msg" class="small"></div>
+    </div>
+
+    <div>
+      <input id="su_email" type="email" placeholder="Email" />
+      <input id="su_pass" type="password" placeholder="Password" />
+      <button id="signup_btn">Sign up</button>
+      <div id="su_msg" class="small"></div>
+    </div>
+  </div>
+  <div id="cf-turnstile"></div>
+</section>
+
+<!-- Badge after login -->
+<div id="user_badge" style="display:none; text-align:center; font-weight:bold; margin:10px; color:#7bd389;"></div>
+
+<section id="app" class="card hidden">
+  <h2>SOP Generator</h2>
+  <label for="sop_title">Title</label>
+  <input id="sop_title" type="text" placeholder="Lockout/Tagout — Press #4" />
+  <button id="ai_btn">🤖 Generate SOP</button>
+  <pre id="preview"></pre>
+</section>
+
+	
+    <!-- Plans -->
+    <section id="plans" class="card">
+      <h2>Choose a Plan</h2>
+      <button class="btn" onclick="startCheckout('starter')">Starter — $19/mo</button>
+      <button class="btn" onclick="startCheckout('pro')">Professional — $49/mo</button>
+      <button class="btn" onclick="startCheckout('unlimited')">Unlimited — $99/mo</button>
+      <button class="btn" onclick="startCheckout('credits')">Buy 3 Credits — $15</button>
+      <div id="checkout_msg" class="small" style="margin-top:6px;opacity:.9"></div>
+    </section>
+
+    <!-- SOP Generator -->
+    <section id="app" class="card hidden">
+      <h2>SOP Generator</h2>
+
+      <label for="sop_title">Title (required)</label>
+      <input id="sop_title" type="text" placeholder="Lockout/Tagout — Press #4">
+
+      <label for="sop_industry">Industry (optional)</label>
+      <input id="sop_industry" type="text" placeholder="Manufacturing / GMP / Pharma / Food / Logistics">
+
+      <label for="sop_process">Process / Machine (optional)</label>
+      <input id="sop_process" type="text" placeholder="Hydraulic press; packaging line; forklift; etc.">
+
+      <label for="sop_site">Site / Department (optional)</label>
+      <input id="sop_site" type="text" placeholder="Plant 1 — Metal Fabrication">
+
+      <button class="btn primary" id="ai_btn">🤖 Generate SOP</button>
+      <button class="btn" id="pdf_btn">Export PDF</button>
+      <button class="btn" id="word_btn">Export Word (Pro+ only)</button>
+
+      <pre id="preview" style="min-height:280px;white-space:pre-wrap"></pre>
+      <div id="app_msg" class="small"></div>
+    </section>
+  </main>
+</body>
+</html>

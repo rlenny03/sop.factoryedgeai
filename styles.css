@@ -1,0 +1,17 @@
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+#user_badge {
+  font-size: 16px;
+  background: #161b22;
+  border: 1px solid #2ea043;
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: inline-block;
+}

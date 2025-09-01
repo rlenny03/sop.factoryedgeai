@@ -1,0 +1,3 @@
+window.SUPABASE_URL = "https://vqkckdsqrzftxiqqjobb.supabase.co";
+window.SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZxa2NrZHNxcnpmdHhpcXFqb2JiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU3MjQ3MTUsImV4cCI6MjA3MTMwMDcxNX0.DBbRuTKPsk-VV27h0CQnkYUG7ob1EIAgu3YWfIncXV0";
+window.TURNSTILE_SITEKEY = "0x4AAAAAABtt8066uwjdwk06";
